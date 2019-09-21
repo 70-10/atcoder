@@ -19,9 +19,9 @@ func TestLogic(t *testing.T) {
 	assert.Equal(t, -1, c)
 
 	a, b, c = logic(1000, 1234000)
-	assert.Equal(t, 14, a)
-	assert.Equal(t, 27, b)
-	assert.Equal(t, 959, c)
+	assert.Equal(t, 26, a)
+	assert.Equal(t, 0, b)
+	assert.Equal(t, 974, c)
 
 	a, b, c = logic(2000, 20000000)
 	assert.Equal(t, 2000, a)
