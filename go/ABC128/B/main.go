@@ -12,6 +12,23 @@ type Restaurant struct {
 	Point int
 }
 
+type Restaurants []Restaurant
+
+func (r Restaurants) Len() int {
+	return len(r)
+}
+
+func (r Restaurants) Less(i, j int) bool {
+	if r[i].Name == r[j].Name {
+		return r[i].Point > r[j].Point
+	}
+	return r[i].Name < r[j].Name
+}
+
+func (r Restaurants) Swap(i, j int) {
+	r[i], r[j] = r[j], r[i]
+}
+
 func main() {
 	var n int
 	fmt.Scanln(&n)
@@ -27,12 +44,7 @@ func main() {
 }
 
 func logic(r []Restaurant) []int {
-	sort.SliceStable(r, func(i, j int) bool {
-		if r[i].Name == r[j].Name {
-			return r[i].Point > r[j].Point
-		}
-		return r[i].Name < r[j].Name
-	})
+	sort.Sort(Restaurants(r))
 	result := []int{}
 
 	for _, i := range r {
