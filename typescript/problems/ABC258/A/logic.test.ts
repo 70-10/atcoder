@@ -1,3 +1,4 @@
+import { expect, test } from "vitest";
 import { logic } from "./logic";
 
 test("63", () => {
