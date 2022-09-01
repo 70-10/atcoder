@@ -2,9 +2,9 @@ import { expect, test } from "vitest";
 import { logic } from "./logic";
 
 test.each([
-  ["53", "Yes"],
-  ["77", "No"],
-  ["472249589291", "Yes"],
+  ["10", "2 5"],
+  ["36", "2 2 3 3"],
+  ["460", "2 2 5 23"],
 ])("logic(%s) -> %s", (arg, expected) => {
   expect(logic(arg)).toBe(expected);
 });
