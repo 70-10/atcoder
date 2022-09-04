@@ -3,7 +3,7 @@ export const logic = (arg: string) => {
     .split("\n")[1]
     .split(" ")
     .map((i) => BigInt(i));
-  return Number(nums.reduce((g, num) => gcd(g, num), nums[0]));
+  return Number(nums.reduce((g, num) => (g * num) / gcd(g, num), nums[0]));
 };
 
 function gcd(a: bigint, b: bigint): bigint {
