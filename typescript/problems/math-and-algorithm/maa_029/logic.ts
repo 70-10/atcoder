@@ -1,15 +1,15 @@
 export const logic = (arg: string) => {
   const n = Number(arg);
-
-  const result: number[] = [];
+  const patterns: number[] = [];
 
   for (let i = 0; i <= n; i++) {
     if (i <= 1) {
-      result[i] = 1;
-    } else {
-      result[i] = result[i - 1] + result[i - 2];
+      patterns[i] = 1;
+      continue;
     }
+
+    patterns[i] = patterns[i - 1] + patterns[i - 2];
   }
 
-  return result[n];
+  return patterns[patterns.length - 1];
 };
