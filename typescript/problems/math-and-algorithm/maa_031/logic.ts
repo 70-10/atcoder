@@ -1,8 +1,8 @@
 export const logic = (arg: string) => {
   const nums = arg.split("\n")[1].split(" ").map(Number);
 
-  const dp1: number = [];
-  const dp2: number = [];
+  const dp1: number[] = [];
+  const dp2: number[] = [];
 
   for (let i = 0; i <= nums.length; i++) {
     if (i === 0) {
