@@ -2,8 +2,18 @@ use proconio::input;
 
 fn main() {
     input! {
-        x: usize,
+        x: i32,
     }
 
-    println!("{}", 5 + x)
+    println!("{}", logic(x))
+}
+
+fn logic(num: i32) -> i32 {
+    return 5 + num;
+}
+
+
+#[test]
+fn test_logic() {
+    assert_eq!(logic(5), 5);
 }
