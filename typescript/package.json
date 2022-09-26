@@ -9,7 +9,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "build:maa": "node problems/math-and-algorithm/build.mjs"
+    "build:maa": "node problems/math-and-algorithm/build.mjs",
+    "build:abc": "node problems/ABC/build.mjs"
   },
   "dependencies": {
     "esbuild": "^0.14.48"
