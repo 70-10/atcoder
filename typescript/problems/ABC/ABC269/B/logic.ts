@@ -1,31 +1,30 @@
 export const logic = (arg: string) => {
   const list = arg.split("\n");
-  let a = 0;
-  let b = 0;
-  let c = 0;
-  let d = 0;
+  const result = { a: 0, b: 0, c: 0, d: 0 };
 
   for (let i = 0; i < list.length; i++) {
     const s = list[i];
-    if (s.includes("#")) {
-      if (a === 0) {
-        a = i + 1;
-      }
-      b = i + 1;
+    if (!s.includes("#")) {
+      continue;
     }
 
-    if (c === 0 && d === 0) {
-      const arr = [...s];
-      for (let j = 0; j < arr.length; j++) {
-        if (arr[j] === "#") {
-          if (c === 0) {
-            c = j + 1;
-          }
-          d = j + 1;
-        }
+    result.a = result.a === 0 ? i + 1 : result.a;
+    result.b = i + 1;
+
+    if (result.c !== 0 || result.d !== 0) {
+      continue;
+    }
+
+    const arr = [...s];
+    for (let j = 0; j < arr.length; j++) {
+      if (arr[j] !== "#") {
+        continue;
       }
+      result.c = result.c === 0 ? j + 1 : result.c;
+      result.d = j + 1;
     }
   }
 
+  const { a, b, c, d } = result;
   return `${a} ${b}\n${c} ${d}`;
 };
